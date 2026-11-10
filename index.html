@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101525">
+  <title>Última órbita — Arcade 8 bits</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cabinet">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Última órbita, inicio">
+        <span class="brand-icon" aria-hidden="true">✦</span>
+        <span>ARCADE <b>8-BIT</b></span>
+      </a>
+      <button id="sound-toggle" class="sound-button" type="button" aria-label="Activar o silenciar sonido" title="Sonido">♫ <span>SONIDO</span></button>
+    </header>
+
+    <section class="game-heading" aria-label="Título del juego">
+      <div class="eyebrow"><span class="live-dot"></span> SISTEMA DE DEFENSA ACTIVO</div>
+      <h1>ÚLTIMA <span>ÓRBITA</span></h1>
+      <p>La galaxia cuenta contigo, piloto.</p>
+    </section>
+
+    <section class="game-shell" aria-label="Zona de juego">
+      <div class="hud">
+        <div class="hud-stat"><span class="hud-label">PUNTOS</span><strong id="score">00000</strong></div>
+        <div class="hud-stat lives-stat"><span class="hud-label">CASCO</span><strong id="lives" aria-label="3 vidas">♥ ♥ ♥</strong></div>
+        <div class="hud-stat wave-stat"><span class="hud-label">SECTOR</span><strong id="wave">01</strong></div>
+        <div class="hud-stat best-stat"><span class="hud-label">RÉCORD</span><strong id="best">00000</strong></div>
+      </div>
+      <div class="screen-frame">
+        <canvas id="game" width="384" height="216" aria-label="Videojuego Última Órbita"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="overlay-card">
+            <div class="pixel-ship" aria-hidden="true">✦</div>
+            <p class="overlay-kicker">MISIÓN DE RESCATE</p>
+            <h2 id="overlay-title">¡DESPEGA, PILOTO!</h2>
+            <p id="overlay-copy">Esquiva los asteroides y recoge cristales de energía. ¡No dejes que rompan tu casco!</p>
+            <button id="main-button" class="start-button" type="button">INICIAR MISIÓN <span>▶</span></button>
+            <p class="overlay-hint">FLECHAS / WASD PARA MOVER · ESPACIO PARA DISPARAR</p>
+          </div>
+        </div>
+      </div>
+      <div class="screen-footer"><span><i class="status-light"></i> NAVE EN LÍNEA</span><span id="status-text">ESPERANDO PILOTO</span></div>
+    </section>
+
+    <section class="below-game">
+      <div class="instructions">
+        <div class="instruction"><span class="keycap">↑</span><span class="keycap">←</span><span class="keycap">↓</span><span class="keycap">→</span><span class="instruction-text">MOVER NAVE</span></div>
+        <div class="instruction"><span class="keycap wide">ESPACIO</span><span class="instruction-text">DISPARAR</span></div>
+        <div class="instruction"><span class="keycap wide">P / ESC</span><span class="instruction-text">PAUSA</span></div>
+      </div>
+      <div class="mobile-controls" aria-label="Controles táctiles">
+        <div class="dpad">
+          <button class="touch-key up" data-key="ArrowUp" aria-label="Arriba">▲</button>
+          <button class="touch-key left" data-key="ArrowLeft" aria-label="Izquierda">◀</button>
+          <button class="touch-key down" data-key="ArrowDown" aria-label="Abajo">▼</button>
+          <button class="touch-key right" data-key="ArrowRight" aria-label="Derecha">▶</button>
+        </div>
+        <button id="fire-button" class="fire-button" aria-label="Disparar">¡FUEGO!</button>
+      </div>
+      <footer class="credits"><span>✦ PROTEGE LA GALAXIA ✦</span><span>HECHO PARA PILOTOS VALIENTES</span></footer>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
